@@ -21,7 +21,8 @@
           7.Get the screenshot from the path using createScreenCaptureFromPath() which is in the MediaEntityBuilder class.
           8.Log the screenshots and other details in extent report using test.log.
           
-          Problems Encounterd:
+          Errors  Encountered:
+          
           1.Broken image of screenshot when viewed the extent report in browser thought image got displayed when run in terminal
           
           Solution:
