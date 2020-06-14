@@ -13,7 +13,7 @@ import java.util.*;
 public class Extentreport_listener extends TestBase implements IReporter {
     ExtentReports extent;
     String outputDirectory;
-    private static final String OUTPUT_FOLDER = "test-output/";
+    private static final String OUTPUT_FOLDER = "/test-output/";
     private static final String FILE_NAME = "Extentreport.html";
 
     @Override
@@ -54,8 +54,10 @@ public class Extentreport_listener extends TestBase implements IReporter {
 
             if(status.toString().equalsIgnoreCase("fail")) {
                 try {
+//using relative path with ".." to avoid broken image when run in browsers
+                    String screenshotname= concatenate+takescreenshot("Failedtestimage");
 
-                    test.fail(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(takescreenshot("Failedtestimage")).build());
+                    test.fail(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(screenshotname).build());
 
                 }
                 catch (IOException e)
@@ -77,9 +79,9 @@ public class Extentreport_listener extends TestBase implements IReporter {
 
     public void init()
     {
-
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(OUTPUT_FOLDER + FILE_NAME);
-        htmlReporter.config().setDocumentTitle("ExtentReports - Created by TestNG Listener");
+        
+       ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+OUTPUT_FOLDER + FILE_NAME);
+       htmlReporter.config().setDocumentTitle("ExtentReports - Created by TestNG Listener");
         htmlReporter.config().setReportName("ExtentReports - Created by TestNG Listener");
         htmlReporter.config().setTheme(Theme.STANDARD);
          extent=new ExtentReports();

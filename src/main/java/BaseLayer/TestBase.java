@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     public static WebDriver driver;
+  public static  String concatenate=".";
     public void initialization() {
         System.setProperty("webdriver.chrome.driver", "C:\\jansi_webdrivers\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -25,7 +26,10 @@ public class TestBase {
     }
     public static String takescreenshot(String filename){
 
-             String path = "C:\\Selenium_projects\\ExtentReport\\test-output\\Screenshots\\"+filename+System.currentTimeMillis()+".jpg";
+
+      String path="./test-output/Screenshots/"+filename+System.currentTimeMillis()+".jpg";
+
+
              File src=  ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
              File dest=new File(path);
              try {
