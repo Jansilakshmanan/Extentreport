@@ -1,4 +1,6 @@
 package UtilityLayer;
+import org.testng.annotations.Test;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -11,17 +13,17 @@ import java.util.Properties;
 public class Emailablereport {
 
     Properties prop;
-    Properties prop1;
     Session session;
     String from=null;
-    String to=null;
+    String[] to=null;
+    String[] cc=null;
     public Emailablereport()
     {
         try {
             String configfilepath = "C:\\Selenium_projects\\ExtentReport\\src\\main\\java\\UtilityLayer\\Config.properties";
             FileInputStream ip = new FileInputStream(configfilepath);
-            prop1 = new Properties();
-            prop1.load(ip);
+            prop=new Properties();
+            prop.load(ip);
         }
         catch(IOException e)
         {
@@ -29,14 +31,12 @@ public class Emailablereport {
         }
 
     }
+    public void init() {
+        from = prop.getProperty("frommailid");
+        to = prop.getProperty("tomailids").split(";");
+        cc = prop.getProperty("ccmailids").split(";");
 
-    public void init()
-    {
-         prop=new Properties();
-
-         from= prop1.getProperty("frommailid");
-       to=  prop1.getProperty("tomailids");
-    prop.setProperty("mail.smtp.host","smtp.gmail.com");
+         prop.setProperty("mail.smtp.host","smtp.gmail.com");
         prop.setProperty("mail.smtp.socketFactory.port","465");
         prop.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
         prop.setProperty("mail.smtp.auth", "true");
@@ -47,7 +47,7 @@ public class Emailablereport {
          session= Session.getDefaultInstance(prop,new javax.mail.Authenticator(){
              protected  PasswordAuthentication getPasswordAuthentication()
              {
-                 return new PasswordAuthentication("******", "******");
+                 return new PasswordAuthentication("*****", "*****");
              }
          });
 
@@ -59,8 +59,18 @@ public class Emailablereport {
         Message msg=new MimeMessage(session);
         try {
             msg.setFrom(new InternetAddress(from));
-            System.out.println("to mail id is:"+to);
-            msg.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+
+            for(int i=0;i<to.length;i++)
+            {
+                System.out.println("Recepient_to mail ids are:" + to[i].toString());
+                msg.addRecipient(Message.RecipientType.TO,new InternetAddress(to[i]));
+            }
+            for(int i=0;i<cc.length;i++)
+            {
+                System.out.println("Recepient_to mail ids are:" + cc[i].toString());
+                msg.addRecipient(Message.RecipientType.CC,new InternetAddress(cc[i]));
+            }
+
             msg.setSubject(" Basic Extent report");
             BodyPart msgbodypart1=new MimeBodyPart();
             msgbodypart1.setText("Extent Report for Gettitle");
