@@ -1,6 +1,12 @@
 # Extentreport
     This repository is basically on different ways of extent report creation integrated with TestNGListeners
     
+    Feautures included:
+          1.Creating a basic extent report.
+          2.Sending the Extent report to recepient mail id via gmail using JavaMailAPI.
+          3.Sending the report to list of recipients--->to,cc,bcc which are retrieved from properties file.
+          
+    
     * Extentreport_listener :  This java file creates a simple report which implements IReporter listener and generates extent report 
                                 at the end of suite run.
     
