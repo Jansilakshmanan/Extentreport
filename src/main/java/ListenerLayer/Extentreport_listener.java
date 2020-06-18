@@ -1,6 +1,7 @@
 package ListenerLayer;
 
 import BaseLayer.TestBase;
+import UtilityLayer.Emailablereport;
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -15,6 +16,8 @@ public class Extentreport_listener extends TestBase implements IReporter {
     String outputDirectory;
     private static final String OUTPUT_FOLDER = "/test-output/";
     private static final String FILE_NAME = "Extentreport.html";
+    String extentreportpath;
+    Emailablereport emailablereport=new Emailablereport();
 
     @Override
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
@@ -41,6 +44,8 @@ public class Extentreport_listener extends TestBase implements IReporter {
 
 
         extent.flush();
+
+        teardown();
 
 
 
@@ -79,19 +84,26 @@ public class Extentreport_listener extends TestBase implements IReporter {
 
     public void init()
     {
-        
-       ExtentSparkReporter htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+OUTPUT_FOLDER + FILE_NAME);
+        extentreportpath=System.getProperty("user.dir") + OUTPUT_FOLDER + FILE_NAME;
+       ExtentSparkReporter htmlReporter = new ExtentSparkReporter(extentreportpath);
        htmlReporter.config().setDocumentTitle("ExtentReports - Created by TestNG Listener");
         htmlReporter.config().setReportName("ExtentReports - Created by TestNG Listener");
         htmlReporter.config().setTheme(Theme.STANDARD);
          extent=new ExtentReports();
         extent.attachReporter(htmlReporter);
         extent.setReportUsesManualConfiguration(true);
+
     }
     private Date getTime(long millis) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(millis);
         return calendar.getTime();
+    }
+
+    public void teardown()
+    {
+
+        emailablereport.sendemailwithattachment(extentreportpath);
     }
 }
 
