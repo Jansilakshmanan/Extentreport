@@ -2,9 +2,32 @@
     This repository is basically on different ways of extent report creation integrated with TestNGListeners
     
     Feautures included:
-          1.Creating a basic extent report.
+          1.Creating a basic extent report with IReporter Listener as well as ITestListener.
           2.Sending the Extent report to recepient mail id via gmail using JavaMailAPI.
           3.Sending the report to list of recipients--->to,cc,bcc which are retrieved from properties file.
+          4.Passing an excel sheet as a dataprovider.
+             *Using same dataprovidrr excel sheet for multiple test cases.
+             *checking if currently executing test method and excel test method name are same .If so,passing matching rows alone to respective test cases.
+             *  All the tests will have the same dataprovider excel dataprovider. For example the test1 will take the data from TestData sheet which have row where the testname                  is test1. If there are multiple rows with test1 as test name , framework will consider it as this as multiple iterations for a test case.
+          5. Creating extent test case for different instances of same test methods.
+                 Creating customized test case name such as testmethod1_testcasename .For.eg: testmethod name is:verifygooglepagetitle and test cases are for chrome browser and                  firefox for same test method,then we can create separate extent test such as Verifygooglepagetitle_chrome,verifygooglepagetitle_firefox
+              This is done by:
+                 i)Passing Method class object ,test data and ITestContext to @BeforeMethod
+                 ii)Retreiving test case name form testdata and and appending with currently executing testmethod name.
+                 iii)Implementing ITest  inteface and overriding gettestname() method with new testcasename.
+                 iv)Setting new testcase name to ITestContext attrribute of ITestListener.
+                 v)While creating Extent test,getting test case name using result.getTestContext().getAttribute("testName").
+                 vi)Sending emailable report as an attachment.
+                 
+         Things to note:
+                   create a Thread Local String object to store your test case name.
+                   And then override the above test case name with new customized test case name and set it to ITestContext.
+                   
+              
+                    
+                 
+                
+            
           
     
     * Extentreport_listener :  This java file creates a simple report which implements IReporter listener and generates extent report 
