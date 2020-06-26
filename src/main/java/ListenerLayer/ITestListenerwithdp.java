@@ -14,8 +14,9 @@ public class ITestListenerwithdp implements ITestListener {
     private  static  final String FILE_NAME="ExtentreportforITestListener.html";
     ExtentReports extent;
     String extentreportpath;
+
     Emailablereport emailablereport=new Emailablereport();
-    private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+   private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
     public void init(){
 
