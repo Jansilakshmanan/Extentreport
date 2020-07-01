@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ExtentReport]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="ListenerLayer.ITestListenerwithdp"/>
+  </listeners>
+  <test thread-count="5" name="ExtentReport(failed)" verbose="0">
+    <classes>
+      <class name="ExtentreportwithdpTest">
+        <methods>
+          <include name="verifygmailpagetitle" invocation-numbers="0 1"/>
+          <include name="verifygooglepagetitle" invocation-numbers="1"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- ExtentreportwithdpTest -->
+    </classes>
+  </test> <!-- ExtentReport(failed) -->
+</suite> <!-- Failed suite [ExtentReport] -->

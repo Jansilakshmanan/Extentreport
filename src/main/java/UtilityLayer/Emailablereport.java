@@ -67,7 +67,7 @@ public class Emailablereport {
             }
             for(int i=0;i<cc.length;i++)
             {
-                System.out.println("Recepient_to mail ids are:" + cc[i].toString());
+                System.out.println("Recepient_to cc mail ids are:" + cc[i].toString());
                 msg.addRecipient(Message.RecipientType.CC,new InternetAddress(cc[i]));
             }
 
