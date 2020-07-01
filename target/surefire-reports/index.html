@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 3 failed,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -100,16 +100,6 @@
                       <a href="#" panel-name="suite-ExtentReport" class="show-methods failed suite-ExtentReport"> (show)</a> <!-- show-methods failed suite-ExtentReport -->
                     </span>
                     <div class="method-list-content failed suite-ExtentReport">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ExtentReport" title="ExtentreportwithdpTest" class="method navigator-link" hash-for-method="verifygmailpagetitle(verifygmailpagetitle, 1.0, Gmail - Email from Google)">verifygmailpagetitle(verifygmailpagetitle, 1.0, Gmail - Email from Google)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-ExtentReport" title="ExtentreportwithdpTest" class="method navigator-link" hash-for-method="verifygmailpagetitle(verifygmailpagetitle, 2.0, Gmail - Email from Google1)">verifygmailpagetitle(verifygmailpagetitle, 2.0, Gmail - Email from Google1)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-ExtentReport" title="ExtentreportwithdpTest" class="method navigator-link" hash-for-method="verifygooglepagetitle(verifygooglepagetitle, 2.0, Googles)">verifygooglepagetitle(verifygooglepagetitle, 2.0, Googles)</a> <!-- method navigator-link -->
@@ -147,32 +137,6 @@
               <span class="class-name">ExtentreportwithdpTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifygmailpagetitle(verifygmailpagetitle, 1.0, Gmail - Email from Google)">
-                  </a> <!-- verifygmailpagetitle(verifygmailpagetitle, 1.0, Gmail - Email from Google) -->
-                  <span class="method-name">verifygmailpagetitle</span>
-                  <span class="parameters">(verifygmailpagetitle, 1.0, Gmail - Email from Google)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Mismatch of title expected [Gmail] but found [Gmail - Email from Google]
-	at ExtentreportwithdpTest.verifygmailpagetitle(ExtentreportwithdpTest.java:91)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifygmailpagetitle(verifygmailpagetitle, 2.0, Gmail - Email from Google1)">
-                  </a> <!-- verifygmailpagetitle(verifygmailpagetitle, 2.0, Gmail - Email from Google1) -->
-                  <span class="method-name">verifygmailpagetitle</span>
-                  <span class="parameters">(verifygmailpagetitle, 2.0, Gmail - Email from Google1)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Mismatch of title expected [Gmail] but found [Gmail - Email from Google]
-	at ExtentreportwithdpTest.verifygmailpagetitle(ExtentreportwithdpTest.java:91)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
-... Removed 35 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="verifygooglepagetitle(verifygooglepagetitle, 2.0, Googles)">
@@ -259,28 +223,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifygmailpagetitle')
+data.setCell(0, 1, 'verifygooglepagetitle')
 data.setCell(0, 2, 'ExtentreportwithdpTest')
-data.setCell(0, 3, 34345);
+data.setCell(0, 3, 972);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifygmailpagetitle')
+data.setCell(1, 1, 'verifygooglepagetitle')
 data.setCell(1, 2, 'ExtentreportwithdpTest')
-data.setCell(1, 3, 7258);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifygooglepagetitle')
-data.setCell(2, 2, 'ExtentreportwithdpTest')
-data.setCell(2, 3, 1405);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifygooglepagetitle')
-data.setCell(3, 2, 'ExtentreportwithdpTest')
-data.setCell(3, 3, 704);
+data.setCell(1, 3, 956);
 window.suiteTableData['ExtentReport']= { tableData: data, tableDiv: 'times-div-ExtentReport'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 43 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-ExtentReport">
               </div> <!-- times-div-ExtentReport -->
             </div> <!-- times-div -->
@@ -313,37 +269,17 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifygooglepagetitle(verifygooglepagetitle, 1.0, Google)</span>
-                <span class="method-start">26405 ms</span>
+                <span class="method-start">24586 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setup(public void ExtentreportwithdpTest.verifygooglepagetitle(java.lang.String,java.lang.String,java.lang...)</span>
-                <span class="method-start">27823 ms</span>
+                <span class="method-start">25566 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifygooglepagetitle(verifygooglepagetitle, 2.0, Googles)</span>
-                <span class="method-start">58646 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(public void ExtentreportwithdpTest.verifygmailpagetitle(java.lang.String,java.lang.String,java.lang....)</span>
-                <span class="method-start">59475 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifygmailpagetitle(verifygmailpagetitle, 1.0, Gmail - Email from Google)</span>
-                <span class="method-start">76278 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup(public void ExtentreportwithdpTest.verifygmailpagetitle(java.lang.String,java.lang.String,java.lang....)</span>
-                <span class="method-start">83540 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifygmailpagetitle(verifygmailpagetitle, 2.0, Gmail - Email from Google1)</span>
-                <span class="method-start">118548 ms</span>
+                <span class="method-start">49195 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -47,7 +47,7 @@ public class Emailablereport {
          session= Session.getDefaultInstance(prop,new javax.mail.Authenticator(){
              protected  PasswordAuthentication getPasswordAuthentication()
              {
-                 return new PasswordAuthentication("jansi.bt@gmail.com", "Jansi90.");
+                 return new PasswordAuthentication("*******", "******");
              }
          });
 

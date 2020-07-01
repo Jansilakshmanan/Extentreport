@@ -1,16 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 169.97 s <<< FAILURE! - in TestSuite
-verifygooglepagetitle_2.0(ExtentreportwithdpTest)  Time elapsed: 0.744 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 53.75 s <<< FAILURE! - in TestSuite
+verifygooglepagetitle_2.0(ExtentreportwithdpTest)  Time elapsed: 0.977 s  <<< FAILURE!
 java.lang.AssertionError: Mismatch of title expected [Googles] but found [Google]
 	at ExtentreportwithdpTest.verifygooglepagetitle(ExtentreportwithdpTest.java:82)
-
-verifygmailpagetitle_1.0(ExtentreportwithdpTest)  Time elapsed: 7.259 s  <<< FAILURE!
-java.lang.AssertionError: Mismatch of title expected [Gmail] but found [Gmail - Email from Google]
-	at ExtentreportwithdpTest.verifygmailpagetitle(ExtentreportwithdpTest.java:91)
-
-verifygmailpagetitle_2.0(ExtentreportwithdpTest)  Time elapsed: 34.346 s  <<< FAILURE!
-java.lang.AssertionError: Mismatch of title expected [Gmail] but found [Gmail - Email from Google]
-	at ExtentreportwithdpTest.verifygmailpagetitle(ExtentreportwithdpTest.java:91)
 
